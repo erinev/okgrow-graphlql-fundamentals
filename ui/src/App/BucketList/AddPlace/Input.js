@@ -8,18 +8,15 @@ const Input = class extends React.Component {
   state = { inputValue: '' };
 
   handleOnChange = event => {
-    console.log('handleOnChange: ' + event.target.value);
     this.setState({ inputValue: event.target.value });
   };
 
   handleOnSelect = (value, item) => {
-    console.log('handleOnSelect: ' + item.formattedAddress);
     this.props.addPlace(item.formattedAddress);
     this.setState({ inputValue: '' });
   };
 
   render() {
-    console.log('render called with input value: ' + this.state.inputValue);
     return (
       <Query
         query={runSearchQuery}
