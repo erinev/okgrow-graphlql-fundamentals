@@ -1,7 +1,7 @@
 export default `
   type Query {
     hello(who: String): String!
-    places: [Place]
+    places(limit: Int): [Place]
   }
 
   type Place {

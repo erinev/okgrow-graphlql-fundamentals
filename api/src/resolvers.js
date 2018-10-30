@@ -7,8 +7,8 @@ const mocks = [
 
 const resolvers = {
   Query: {
-    hello: (root, args) => `Hello ${args.who || 'world'}!`,
-    places: () => mocks,
+    hello: (root, args, context) => `Hello ${args.who || 'world'}!`,
+    places: (root, args, { Place }) => Place.all({ limit: args.limit }),
   },
 };
 
