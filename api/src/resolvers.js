@@ -11,6 +11,19 @@ const resolvers = {
     places: (root, args, { Place }) => Place.all({ limit: args.limit }),
     locationSuggestion: (root, args, { Location }) => Location.get(args.name),
   },
+  Mutation: {
+    createPlace: async (_, { input: { address } }, { Place }) => {
+      const doc = {
+        name: address,
+        visited: false,
+      };
+
+      const insertedId = await Place.insert(doc);
+      const newPlace = await Place.findOneById(insertedId);
+
+      return newPlace;
+    },
+  },
   Place: {
     location: (place, args, { Location }) => Location.get(place.name),
   },

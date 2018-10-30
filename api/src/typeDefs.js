@@ -5,6 +5,14 @@ export default `
     locationSuggestion(name: String!): Location
   }
 
+  type Mutation {
+    createPlace(input: CreatePlaceInput): Place!
+  }
+
+  input CreatePlaceInput {
+    address: String!
+  }
+
   type Place {
     id: ID!
     name: String!
