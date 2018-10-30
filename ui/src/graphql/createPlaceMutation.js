@@ -9,6 +9,11 @@ export default gql`
       location {
         latitude
         longitude
+        formattedAddress
+        weather {
+          icon
+          temperature
+        }
       }
     }
   }

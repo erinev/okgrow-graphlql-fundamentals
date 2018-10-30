@@ -9,8 +9,6 @@ export default gql`
       location {
         latitude
         longitude
-        country
-        countryCode
         formattedAddress
         weather {
           icon
