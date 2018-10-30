@@ -14,7 +14,6 @@ export default `
   type Location {
     latitude: Float!
     longitude: Float!
-    city: String!
     country: String!
     countryCode: String!
     formattedAddress: String!
