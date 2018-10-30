@@ -48,7 +48,7 @@ export default class Place {
           ...doc,
           updatedAt: Date.now(),
         },
-      },
+      }
     );
     return ret;
   }

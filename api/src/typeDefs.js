@@ -7,10 +7,16 @@ export default `
 
   type Mutation {
     createPlace(input: CreatePlaceInput): Place!
+    updatePlace(input: UpdatePlaceInput): Place!
   }
 
   input CreatePlaceInput {
     address: String!
+  }
+
+  input UpdatePlaceInput {
+    id: ID!,
+    visited: Boolean!
   }
 
   type Place {

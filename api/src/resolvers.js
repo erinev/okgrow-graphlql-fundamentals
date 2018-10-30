@@ -23,6 +23,17 @@ const resolvers = {
 
       return newPlace;
     },
+    updatePlace: async (_, { input: { id, visited } }, { Place }) => {
+      const retrievedPlace = await Place.findOneById(id);
+
+      retrievedPlace.visited = visited;
+
+      await Place.updateById(id, retrievedPlace);
+
+      const updatedPlace = await Place.findOneById(id);
+
+      return updatedPlace;
+    },
   },
   Place: {
     location: (place, args, { Location }) => Location.get(place.name),
