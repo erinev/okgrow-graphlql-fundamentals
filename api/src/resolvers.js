@@ -9,6 +9,7 @@ const resolvers = {
   Query: {
     hello: (root, args, context) => `Hello ${args.who || 'world'}!`,
     places: (root, args, { Place }) => Place.all({ limit: args.limit }),
+    locationSuggestion: (root, args, { Location }) => Location.get(args.name),
   },
   Place: {
     location: (place, args, { Location }) => Location.get(place.name),

@@ -2,6 +2,7 @@ export default `
   type Query {
     hello(who: String): String!
     places(limit: Int): [Place!]!
+    locationSuggestion(name: String!): Location
   }
 
   type Place {
