@@ -13,16 +13,18 @@ export default class Weather {
 
       const data = await response.json();
 
+      // console.log(data);
+
       // guard result against no data (usually quota exceeded)
       return {
         icon: data.currently ? iconMap[data.currently.icon] : '🔥', // the icon value is more "parseable"
-        temperature: data.currently ? data.currently.temperature : -403
+        temperature: data.currently ? data.currently.temperature : -403,
       };
     } catch (error) {
       // mostly likely our API key is invalid or disabled
       return {
         icon: '🔥',
-        temperature: 403
+        temperature: 403,
       };
     }
   }
@@ -41,5 +43,5 @@ const iconMap = {
   'partly-cloudy-night': '☁️',
   hail: '⛈',
   thunderstorm: '⛈',
-  tornado: '🌪'
+  tornado: '🌪',
 };

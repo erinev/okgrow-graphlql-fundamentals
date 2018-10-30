@@ -17,5 +17,11 @@ export default `
     country: String!
     countryCode: String!
     formattedAddress: String!
+    weather: Weather!
+  }
+
+  type Weather {
+    icon: String!
+    temperature: Float!
   }
 `;

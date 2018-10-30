@@ -13,6 +13,9 @@ const resolvers = {
   Place: {
     location: (place, args, { Location }) => Location.get(place.name),
   },
+  Location: {
+    weather: (location, args, { Weather }) => Weather.get(location),
+  },
 };
 
 export default resolvers;
