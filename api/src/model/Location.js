@@ -15,6 +15,10 @@ export default class Location {
 
       const [location] = await geocoder.geocode(name);
 
+      // console.log('-----------------------');
+      // console.log(location);
+      // console.log('-----------------------');
+
       return location;
     } catch (e) {
       throw new Error(e);

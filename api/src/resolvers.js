@@ -10,6 +10,9 @@ const resolvers = {
     hello: (root, args, context) => `Hello ${args.who || 'world'}!`,
     places: (root, args, { Place }) => Place.all({ limit: args.limit }),
   },
+  Place: {
+    location: (place, args, { Location }) => Location.get(place.name),
+  },
 };
 
 export default resolvers;
