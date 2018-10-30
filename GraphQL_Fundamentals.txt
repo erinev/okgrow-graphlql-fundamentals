@@ -1,0 +1,51 @@
+Feedback: 
+- Slide links could be opened in new tab not on same window
+
+Notes:
+- Schema:
+    [TypeOfItems] - array of items
+    ! - value cannot be null
+    [TypeOfItems!]! - must return array and array items cannot be null and array can be empty (but item can't be null)
+- Extract different fields to separate resolvers (if external call fs, db, api is performed) so if client won't ask for it no queries will be executed
+- Dataloaders to optimize query execution (number, count, cache)
+- Query with variables:
+    Query variables: 
+    {
+      "name": "grand"
+    }
+    Query:
+    query($name: String!) {
+      locationSuggestion(name: $name) {
+        formattedAddress,
+        weather {
+          temperature
+        }
+      }
+    }
+- input = parameter object to mutation query
+- mutation:
+    mutation {
+      createPlace (input: {
+        address: "Yosemite National Park, California, USA"
+      }) {
+        id
+        name
+        visited,
+        location{
+          latitude,
+          longitude
+        }
+      }
+    }
+- 
+
+Slides:
+http://training-slides.okgrow.com/graphql-fundamentals-Adform-2018-10-30/#/21
+
+Star Wars API (REST vs GraphQL):
+https://swapi.co/
+https://graphql.org/swapi-graphql/
+
+Github GraphQL api:
+https://developer.github.com/v4/explorer/
+
